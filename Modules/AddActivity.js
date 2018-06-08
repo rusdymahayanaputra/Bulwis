@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button, TextInput, Alert, Image,
-        ScrollView, TouchableOpacity, YellowBox, ListView, Platform, Picker , ActivityIndicator, PixelRatio } from 'react-native';
+        ScrollView, TouchableOpacity, YellowBox, ListView, Platform,
+        Picker , ActivityIndicator, PixelRatio } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import {DrawerNavigator} from 'react-navigation';
 import ImagePicker from 'react-native-image-picker';
 
 class AddActivity extends Component {
   constructor(props) {
-      super(props)
+    super(props);
 
       this.state = {
 
@@ -162,6 +163,7 @@ uploadPicture = () => {
 
   <View style={styles.MainContainer}>
     <ScrollView>
+        <Text style={{fontSize: 20, textAlign: 'center', marginBottom: 7}}> Tambah Data </Text>
           <TextInput
 
             // Adding hint in Text Input using Place holder.
@@ -230,7 +232,7 @@ uploadPicture = () => {
           />
 
           <View style={{ flex: 1, paddingBottom: 20, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={{fontSize: 14, color: '#000'}}>Add Image</Text>
+                <Text style={{fontSize: 14, color: '#000'}}>Choose Image</Text>
                 <TouchableOpacity onPress={this.choosePicture.bind(this)}>
                     <View style={styles.ImageContainer}>
                         {this.state.srcImg === null ? (
@@ -258,6 +260,8 @@ uploadPicture = () => {
             underlineColorAndroid='transparent'
 
             style={styles.TextInputStyleClass}
+
+            keyboardType = 'numeric'
           />
 
           <Button title="Input Data" onPress={this.uploadPicture} color="#2196F3" />

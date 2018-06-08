@@ -88,7 +88,7 @@ class EditActivity extends Component {
           this.props.navigation.navigate('Kategori');
        }
 
-       DeleteStudentRecord = () =>{
+       Delete = () =>{
 
           fetch('https://iwes.000webhostapp.com/bulwis/datas/delete/'+this.state.id_wisata, {
 
@@ -209,7 +209,7 @@ class EditActivity extends Component {
 
            <TextInput
 
-             placeholder="Kategori"
+             placeholder="Kategori: 1 -> Wisata, 2 -> Hotel, 3 -> Kuliner"
 
              value={this.state.id_katagori}
 
@@ -220,17 +220,19 @@ class EditActivity extends Component {
              underlineColorAndroid='transparent'
 
              style={styles.TextInputStyleClass}
+
+             keyboardType = 'numeric'
            />
 
 
 
-          <TouchableOpacity activeOpacity = { .4 } style={styles.TouchableOpacityStyle} onPress={this.Update} >
+          <TouchableOpacity activeOpacity = { .4 } style={styles.button} onPress={this.Update} >
 
              <Text style={styles.TextStyle}> UPDATE </Text>
 
           </TouchableOpacity>
 
-          <TouchableOpacity activeOpacity = { .4 } style={styles.TouchableOpacityStyle} onPress={this.DeleteStudentRecord} >
+          <TouchableOpacity activeOpacity = { .4 } style={styles.button} onPress={this.Delete} >
 
              <Text style={styles.TextStyle}> DELETE </Text>
 
@@ -253,9 +255,28 @@ class EditActivity extends Component {
   margin: 10
   },
 
-  AddButton: {
-    marginTop : 10,
-  },
+  button: {
+
+      width: '100%',
+      height: 40,
+      padding: 10,
+      backgroundColor: '#4CAF50',
+      borderRadius:7,
+      marginTop: 12
+    },
+
+    TextInputStyleClass2: {
+      textAlign: 'center',
+      marginBottom: 7,
+      height: 70,
+      borderWidth: 1,
+      borderColor: '#FF5722',
+    },
+
+  TextStyle:{
+      color:'#fff',
+      textAlign:'center',
+    },
 
   TextInputStyleClass: {
 
@@ -279,13 +300,6 @@ class EditActivity extends Component {
     backgroundColor: '#00BCD4'
 
   },
-  TextInputStyleClass2: {
-    textAlign: 'center',
-    marginBottom: 7,
-    height: 70,
-    borderWidth: 1,
-    borderColor: '#FF5722',
-  }
 
   });
 export default EditActivity;

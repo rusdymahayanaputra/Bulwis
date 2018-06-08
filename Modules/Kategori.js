@@ -50,8 +50,8 @@ class Kategori extends Component {
                  source={require('./wisata.png')}
                  style={styles.ImageStyleBox}
                 />
-                <Text style = {styles.TextStyleBox}> Wisata </Text>
               </TouchableOpacity>
+              <Text style = {styles.TextStyleBox}> Wisata </Text>
             </View>
             <View style = {styles.KategoriboxIn}>
               <TouchableOpacity activeOpacity={0.5} onPress = { this.navigateHotel }>
@@ -214,8 +214,8 @@ ImageStyleBox: {
    marginRight: 5,
    marginBottom: 5,
    marginTop: 10,
-   width: 116,
-   height: 116,
+   width: 100,
+   height: 100,
    resizeMode : 'stretch',
    justifyContent: 'center',
    alignItems:'center',

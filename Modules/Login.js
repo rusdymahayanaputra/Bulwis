@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, YellowBox } from 'react-native';
 import * as firebase from 'firebase';
 import { Input } from './../components/Input';
 import { Button } from './../components/Button';
@@ -7,9 +7,20 @@ import AddActivity from './../components/AddActivity';
 import { StackNavigator } from 'react-navigation';
 
 class Login extends React.Component {
+  constructor(props) {
+
+   super(props);
+
+   YellowBox.ignoreWarnings(
+
+      ['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
+
+    ]);
+
+ }
   state = {
-    email: 'supriyanta5@gmail.com',
-    password: '998999',
+    email: '',
+    password: '',
     authenticating: false,
     user: null,
     error: '',
